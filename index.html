@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My First Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            padding: 40px;
+        }
+        h1 {
+            color: #007bff;
+        }
+        p {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome!</h1>
+    <p>This is a simple HTML page created as an example.</p>
+  <script>
+  // Initialize the agent on page load.
+  const fpPromise = import('https://fpjscdn.net/v3/ugv7lal57nFiLxfUX7RX')
+    .then(FingerprintJS => FingerprintJS.load())
+
+  // Get the visitorId when you need it.
+  fpPromise
+    .then(fp => fp.get())
+    .then(result => {
+      const visitorId = result.visitorId
+      console.log(visitorId)
+    })
+</body>
+</html>
